@@ -5,6 +5,9 @@ to-do list for project club-e12
  2. OK read assignment requirements carefully again
  3. OK: read Garetts' ["The Elements of User Experience"](http://www.jjg.net/elements/)
 
+ 4. Plane 1 - Formulate Strategy:
+ 5. Plane 2 - Scope & Structrue
+
 done / conclusions
 ------------------
 
