@@ -17,5 +17,8 @@ http://get-simple.info/wiki/start
 chech this out -> https://www.dokuwiki.org/dokuwiki#
 
 // WASTED almost a day on making responsive filemanager work with tiny MCE and MAMA !!!!!!
+// done: embedded with mamp, file handling ok, activated "save" button that triggers form submit.
+// to do: how to load document from file system into tinymce?
+// to do: css for hiding form submit button but keeping functional
 
-s5 slide show format, chech?
+* s5 slide show format, check?
