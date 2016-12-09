@@ -12,14 +12,36 @@
         
         $(document).ready(function () {
             $("#navigation li").click(function (e) {
-                e.stopPropagation(); // !
-
+                
+                e.stopPropagation(); // !!! important and tricky to find out
+                
+                // same item clicked again, save state before initialized again
+                var clicked_again = ( $(this).attr("iamhere") == 'true' ); 
+                
+                // init all with iamhere=false and expand
                 $("#navigation li").attr("iamhere", "false");
-                // set true for selected
-                $(this).attr("iamhere", "true");
+                $("#navigation li").attr("expand", "true");
+                
+                // but set true for the selected one,               
+            
+                $(this).attr("iamhere", "true");  
+                
+                // logic to expand/collapse selected item
+                if (clicked_again)  {
+                    $(this).attr("expand", "false");   
+                }
+                
+                     
+                
                 $('#navigation ul').hide();
-                $("[iamhere=true]").parents().show();
-                $("[iamhere=true]").children().show();
+                $("[iamhere=true]").parents().show();       
+                $("[iamhere=true][expand=true]").children().show();
+                
+                alert( $(this).attr("id") +" "+ $(this).attr("iamhere") +" "+  $(this).attr("expand")  );
+                
+                $(this).attr("expand", "true");  // no influence  ?!?!?
+      
+                
                 /*
                 var li_id = $(this).attr("id");
                 alert(li_id);
@@ -33,7 +55,7 @@
             
             $('#navigation ul').hide();
     
-            $('#navigation > ul > li ').parents().show();
+            $('#navigation > ul > li ').parents().show(); // ! selector to remember
              
             /*
             console.log("Ready!");

@@ -1,4 +1,5 @@
 #navigation { float: left; margin-right: 1em;}
+
 #navigation {
   font-family: Arial, Verdana, Helvetica, sans-serif;
   font-weight: bold;
@@ -42,7 +43,8 @@
   border-bottom: 1px outset #333;
   border-left: 5px outset #333;
 }
-#navigation a:active {
+
+#navigation a:active {  /* redundandt ? */
   color: #fff;
   background-color: #900;
   border-top: 1px inset #333;
@@ -50,6 +52,7 @@
   border-bottom: 1px inset #333;
   border-left: 5px inset #333;
 }
+
 #navigation ul ul a { 
   list-style: none;
   padding-left: 1.5em;
@@ -64,7 +67,7 @@
   font-weight: normal;
   font-style: normal;
 }
-#navigation ul.collapse { 
+#navigation ul.collapse {  // ???
   display: none; 
 }
 
