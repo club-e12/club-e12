@@ -22,3 +22,7 @@ chech this out -> https://www.dokuwiki.org/dokuwiki#
 // to do: css for hiding form submit button but keeping functional
 
 * s5 slide show format, check?
+
+* Aviary graphic editor , free ed ?
+
+* lazy load thumbnails ??? base64
