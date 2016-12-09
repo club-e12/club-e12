@@ -33,6 +33,9 @@ About Us
 	community
 Events
 News
+Magazine
+	Current Issue
+	Old issues
 Services
 	Cafe
 		menues
