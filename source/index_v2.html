@@ -15,48 +15,38 @@
                 
                 e.stopPropagation(); // !!! took ages to find this solution .. 
                 
-                // remember if current clicked on <li> was clicked (and hence expanded) before
-                 old_iamhere = ( ($(this).attr("iamhere") == 'true') && ($(this).attr("expand") == 'true')  ); 
+                // same item clicked again, save state before initialized again
+                var clicked_again = ( $(this).attr("iamhere") == 'true' ); 
                 
-                // init all with iamhere=false and expand=true
-                // 
+                // init all with iamhere=false and expand
                 $("#navigation li").attr("iamhere", "false");
                 $("#navigation li").attr("expand", "true");
                 
-                // but set iamhere true for the current selected one,               
+                // but set true for the selected one,               
             
                 $(this).attr("iamhere", "true");  
                 
-                // if current <lis> was clicked again then do not expand
-                if (old_iamhere)  {
-                    $(this).attr("expand", "false");   
+                // logic to expand/collapse selected item
+                if (clicked_again)  {
+                    $(this).data("expand", "false");   
                 }
                 
-                save_this = $(this); // yess, this works !!!
-                
-           alert (old_iamhere)  ;         // ok , works */   
+                     
                 
                 $('#navigation ul').hide();
                 $("[iamhere=true]").parents().show();       
-        //        $("[iamhere=true][expand=true]").children().show();
+                $("[iamhere=true][expand=true]").children().show();
                 
-                 if (!old_iamhere) {
-                     $("[iamhere=true][expand=true]").children().show();
-                     save_this.attr("expand", "true");  // re-init
-                    
-                 }
-             
-                
-       //         alert( $(this).attr("id") +" "+ $(this).attr("iamhere") +" "+  $(this).attr("expand")  );
+      //          alert( $(this).attr("id") +" "+ $(this).attr("iamhere") +" "+  $(this).attr("expand")  );
             
                
        /*        $(this).attr("expand", "true");  // no influence  ?!?!?
                $("#navigation li").attr("expand", "true"); // fail   */
                
-        /*        $(this).attr("expand", "true"); // fail again  */
+                $("#navigation li").attr("expand", "true");
                 
       
-        //        alert( $(this).attr("id") +" "+ $(this).attr("iamhere") +" "+  $(this).attr("expand")  );
+            //    alert( $(this).attr("id") +" "+ $(this).attr("iamhere") +" "+  $(this).attr("expand")  );
                 
                 /*
                 var li_id = $(this).attr("id");
@@ -68,8 +58,6 @@
   
             
             });
-            
-            // show top level of clamshell once on document ready event
             
             $('#navigation ul').hide();
     

@@ -15,48 +15,37 @@
                 
                 e.stopPropagation(); // !!! took ages to find this solution .. 
                 
-                // remember if current clicked on <li> was clicked (and hence expanded) before
-                 old_iamhere = ( ($(this).attr("iamhere") == 'true') && ($(this).attr("expand") == 'true')  ); 
+                // remember current iamhere before all get initialized again
+                var old_iamhere = ( $(this).attr("iamhere") == 'true' ); 
                 
-                // init all with iamhere=false and expand=true
-                // 
+                // init all with iamhere=false and expand
                 $("#navigation li").attr("iamhere", "false");
                 $("#navigation li").attr("expand", "true");
                 
-                // but set iamhere true for the current selected one,               
+                // but set true for the selected one,               
             
                 $(this).attr("iamhere", "true");  
                 
-                // if current <lis> was clicked again then do not expand
+                // if current <lis> is clicked again then do not expand but contract
                 if (old_iamhere)  {
                     $(this).attr("expand", "false");   
                 }
                 
-                save_this = $(this); // yess, this works !!!
-                
-           alert (old_iamhere)  ;         // ok , works */   
+                     
                 
                 $('#navigation ul').hide();
                 $("[iamhere=true]").parents().show();       
-        //        $("[iamhere=true][expand=true]").children().show();
-                
-                 if (!old_iamhere) {
-                     $("[iamhere=true][expand=true]").children().show();
-                     save_this.attr("expand", "true");  // re-init
-                    
-                 }
-             
+                $("[iamhere=true][expand=true]").children().show();
                 
        //         alert( $(this).attr("id") +" "+ $(this).attr("iamhere") +" "+  $(this).attr("expand")  );
             
                
        /*        $(this).attr("expand", "true");  // no influence  ?!?!?
                $("#navigation li").attr("expand", "true"); // fail   */
-               
-        /*        $(this).attr("expand", "true"); // fail again  */
+               $(this).attr("expand", "true"); // fail again
                 
       
-        //        alert( $(this).attr("id") +" "+ $(this).attr("iamhere") +" "+  $(this).attr("expand")  );
+                alert( $(this).attr("id") +" "+ $(this).attr("iamhere") +" "+  $(this).attr("expand")  );
                 
                 /*
                 var li_id = $(this).attr("id");
