@@ -1,0 +1,174 @@
+
+
+<ul>
+    GRUPPE
+    <li> <a href="#">Article 1</a>  weg ok
+        
+        <ul>  GRUPPE
+            <li> <a href="#">Article 1-1</a>        MISSING </li>
+            <li> <a href="#">Article 1-2</a>        weg ok
+                    <ul> GRUPPE
+                        <li> <a href="#">Article 1-2-1</a>   MISSING </li>
+                        <li> <a href="#">Article 1-2-2</a>   MISSING </li>
+                    </ul> ok
+            </li> OK
+            
+            <li> <a href="#">Article 1-3</a> MISSING </li>
+                    
+        </ul> ok
+        </li> ok
+    
+    <li> <a href="#">Article 2</a>      weg OK
+        <ul> GRUPPE
+            <li> <a href="#">Article 2-1</a>    MISSING </li>
+            <li> <a href="#">Article 2-2</a>    MISSING </li>
+        </ul> ok
+        </li> ok
+    
+</ul>
+</li>  weg
+    
+    
+<ul>
+    
+    group_closed:falsegroup_closed:false   
+    <li> <a href="#">Article 1</a>
+        
+        <ul>
+            group_closed:falsegroup_closed:false
+            <li> <a href="#">Article 1-1</a> 
+                
+                group_closed:falsegroup_closed:false
+                <li> <a href="#">Article 1-2</a>
+                    <ul>
+                        
+                        group_closed:falsegroup_closed:false
+                        <li> <a href="#">Article 1-2-1</a> 
+                        group_closed:falsegroup_closed:false
+                        <li> <a href="#">Article 1-2-2</a> 
+                    
+                    </ul>
+                    
+                    </li> group_closed:truegroup_closed:true
+            
+                    <li> <a href="#">Article 1-3</a> </ul>
+        
+        </li> 
+    
+        group_closed:truegroup_closed:true
+        <li> <a href="#">Article 2</a>
+            
+            <ul>
+                group_closed:falsegroup_closed:false
+                <li> <a href="#">Article 2-1</a> 
+                    
+                    group_closed:falsegroup_closed:false
+                    <li> <a href="#">Article 2-2</a> </ul>
+            </li>
+</ul>
+</li>
+
+   
+dump size value: 5
+<ul>
+    dump size value: 1
+    dump size value: 1
+    <li> <a href="#">Article 1</a> </li>
+    dump size value: 2
+    <ul>
+        dump size value: 1
+        dump size value: 1
+        <li> <a href="#">Article 1-1</a> </li>
+        dump size value: 4
+        dump size value: 1
+        dump size value: 1
+        <li> <a href="#">Article 1-2</a> </li>
+        dump size value: 2
+        <ul>
+            dump size value: 1
+            dump size value: 1
+            <li> <a href="#">Article 1-2-1</a> </li>
+            dump size value: 2
+            dump size value: 1
+            dump size value: 1
+            <li> <a href="#">Article 1-2-2</a> </li>
+        </ul>
+        </li> 
+    dump size value: 2
+    dump size value: 1
+    dump size value: 1
+        <li> <a href="#">Article 1-3</a> </li>
+    </ul>
+    </li> dump size value: 4
+dump size value: 1
+dump size value: 1
+    <li> <a href="#">Article 2</a> </li>
+dump size value: 2
+    <ul>
+        dump size value: 1
+        dump size value: 1
+        <li> <a href="#">Article 2-1</a> </li>
+        dump size value: 2
+        dump size value: 1
+        dump size value: 1
+        <li> <a href="#">Article 2-2</a> </li>
+    </ul>
+    </li>
+</ul>
+</li>
+
+<ul>
+    <li> <a href="#">Article 1</a>          weg     </li>
+    dump size value: 2
+    <ul>
+        <li> <a href="#">Article 1-1</a> </li>
+        dump size value: 4  weg
+        <li> <a href="#">Article 1-2</a>                    weg </li>
+        dump size value: 2
+        <ul>
+            <li> <a href="#">Article 1-2-1</a> </li>
+            dump size value: 2
+            <li> <a href="#">Article 1-2-2</a> </li>
+        </ul>
+        </li> dump size value: 2
+        <li> <a href="#">Article 1-3</a> </li>
+    </ul>
+    </li> 
+dump size value: 4
+    <li> <a href="#">Article 2</a>              weg     </li>
+dump size value: 2
+    <ul>
+        <li> <a href="#">Article 2-1</a> </li>
+        dump size value: 2
+        <li> <a href="#">Article 2-2</a> </li>
+    </ul>
+    </li>
+</ul>
+</li>
+</div>
+
+
+
+//
+
+<<ul>
+    <li id="nav1" nested="true"><a href="#">Article 1</a>
+        <ul>
+            <li id="nav11" nested="false"><a href="#">Article 1-1</a> </li>
+            <li id="nav12" nested="true"><a href="#">Article 1-2</a>
+                <ul>
+                    <li id="nav121" nested="false"><a href="#">Article 1-2-1</a> </li>
+                    <li id="nav122" nested="false"><a href="#">Article 1-2-2</a> </li>
+                </ul>
+            </li>
+            <li id="nav13" nested="false"><a href="#">Article 1-3</a> </li>
+        </ul>
+    </li>
+    <li id="nav2" nested="true"><a href="#">Article 2</a>
+        <ul>
+            <li id="nav21" nested="false"><a href="#">Article 2-1</a> </li>
+            <li id="nav22" nested="false"><a href="#">Article 2-2</a> </li>
+        </ul>
+    </li>
+</ul>
+    

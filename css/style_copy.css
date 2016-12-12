@@ -1,6 +1,6 @@
-nav { float: left; margin-right: 1em;}
+#navigation { float: left; margin-right: 1em;}
 
-nav {
+#navigation {
   font-family: Arial, Verdana, Helvetica, sans-serif;
   font-weight: bold;
   font-size: 1.2em;
@@ -10,16 +10,16 @@ nav {
   background-color: #ddd;
   color: #900;
 }
-nav ul { 
+#navigation ul { 
   list-style: none;
   margin: 0;
   padding: 0;
 }
-nav ul li { 
+#navigation ul li { 
   margin: 0;
   border-top: 1px none #333;
 }
-nav ul li a {
+#navigation ul li a {
   display: block;
   background-color: #ccc;
   border-top: 1px none #333;
@@ -29,13 +29,13 @@ nav ul li a {
   text-decoration: none;
   padding: 2px 2px 2px 0.5em;
 }
-nav a:link {
+#navigation a:link {
   color: #900;
 }
-nav a:visited {
+#navigation a:visited {
   color: #900;
 }
-nav a:hover {
+#navigation a:hover {
   color: #fff;
   background-color: #900;
   border-top: 1px outset #333;
@@ -44,7 +44,7 @@ nav a:hover {
   border-left: 5px outset #333;
 }
 
-nav a:active {  /* redundandt ? */
+#navigation a:active {  /* redundandt ? */
   color: #fff;
   background-color: #900;
   border-top: 1px inset #333;
@@ -53,65 +53,37 @@ nav a:active {  /* redundandt ? */
   border-left: 5px inset #333;
 }
 
-nav ul ul a { 
+#navigation ul ul a { 
   list-style: none;
   padding-left: 1.5em;
   font-size: 85%;
   font-weight: normal;
   font-style: italic; /* thomas */
 }
-nav ul ul ul a { 
+#navigation ul ul ul a { 
   list-style: none;
   padding-left: 2.5em;
   font-size: 75%;
   font-weight: normal;
   font-style: normal;
 }
-nav ul.collapse {  // ???
+#navigation ul.collapse {  // ???
   display: none; 
 }
 
 // thomas
 
-nav li[nested="true"] > a {
+#navigation li[nested="true"] > a {
     letter-spacing: 12px;
-    background-color: blue;
+    background-color: white;
 }
 
-nav li[iamhere="true"] > a { background-color: white; }
+#navigation li[iamhere="true"] > a { background-color: white; }
 
-nav li[iamhere="true"] > a:hover {
+#navigation li[iamhere="true"] > a:hover {
   color: #900;
   background-color: #fff;
   border-top: 1px none #333;
   border-right: 1px solid #333;
   border-bottom: thin dotted #333;
   border-left: 5px solid #333;}
-
-// --
-header, nav, section, footer {
-    display: block;
-}
-
-header {
-    background-color: yellow;
-}
-
-footer {
-    background-color: aquamarine;
-}
-
-header p[title="club_e-12"] {
-     font-weight: bold;
-     font-size: 2em; 
-}
-
-section {
-    background-color: beige;
-}
-
-body article h2 {
-    font-size: 1.5em; 
-}
-
-

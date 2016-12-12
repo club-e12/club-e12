@@ -1,51 +1,93 @@
 {
-
+  
+    "nav0": {
+        "name": "Home",
+        "path": "inc/home.php"     
+        },
+    
     "nav1": { 
-        "name": "Article 1",   
+        "name": "About Us",   
         "path": "#",          
             "nav11": {        
-                    "name": "Article 1-1",
+                    "name": "Mission",
                     "path": "#"
         
             },
             "nav12": {
-                "name": "Article 1-2",
+                "name": "Locations",
                 "path": "#",
             
                     "nav121": {
-                        "name": "Article 1-2-1",
+                        "name": "National",
                         "path": "#"
                     },
                     "nav122": {
-                        "name": "Article 1-2-2",
+                        "name": "International",
                         "path": "#"
                     }
                 
         
             },
             "nav13": {
-                "name": "Article 1-3",
+                "name": "History",
                 "path": "#"
         
-            }
+            },
+            "nav14": {
+                "name": "People",
+                "path": "#"
         
+            },
+            "nav15": {
+                "name": "Commmunity",
+                "path": "#"
         
+            } 
     },
-    
+
     "nav2": {
-        "name": "Article 2",
+        "name": "Events",
+        "path": "#"     
+        },
+
+    
+    "nav3": {
+        "name": "Services",
         "path": "#",
-            "nav21": {
-                    "name": "Article 2-1",
+        
+            "nav30": {
+                "name": "Reserve Club Room",
+                "path": "#"
+        
+            },
+        
+            "nav31": {
+                    "name": "Book Exchange",
                     "path": "#"
         
             },
-            "nav22": {
-                "name": "Article 2-2",
-                "path": "#"
+            "nav32": {
+                "name": "Cafe",
+                "path": "#",
+                
+                "nav321": {
+                        "name": "Menues",
+                        "path": "#"
+                    },
+                    "nav322": {
+                        "name": "Home Deliverey",
+                        "path": "#"
+                    }
         
             }
         
-    }
+    },
+    
+    "nav4": {
+        "name": "Groups",
+        "path": "#"     
+        }
+
+    
     
 }
