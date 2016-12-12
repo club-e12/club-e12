@@ -1,0 +1,63 @@
+{
+
+    // para-1  value size 5  , false, , enter rek with value = array foreach   
+    "nav1": { 
+       
+        "name": "Article 1",   // for, size 1, FALSE, 
+        "path": "#",           // for size 1 , FALSE, - 
+                              //  PRINT name/path       NO </LI> BECAUSE .. nav 11,12 to follow
+                             
+            "nav11": {         // for size 2,  T R U E 
+                            // enter rek para=obj nav11
+                            
+                                //  value size 1, false, value size 1, false, PRINT name/path
+                    "name": "Article 1-1",      // foreach the two attr
+                    "path": "#"
+                                                // back from rek
+                
+                
+                
+                                                // NOW PRINT .. cause size==2 before recursion  !!!
+        
+            },
+            "nav12": {
+                "name": "Article 1-2",   //   NO  </LI> cause 121 122 to follow
+                "path": "#",
+            
+                    "nav121": {
+                        "name": "Article 1-2-1",       
+                        "path": "#"
+                    },
+                    "nav122": {
+                        "name": "Article 1-2-2",
+                        "path": "#"
+                    }
+                
+        
+            },
+            "nav13": {
+                "name": "Article 1-3",
+                "path": "#"
+        
+            }
+        
+        
+    },
+    
+    "nav2": {
+        "name": "Article 2",
+        "path": "#",
+            "nav21": {
+                    "name": "Article 2-1",
+                    "path": "#"
+        
+            },
+            "nav22": {
+                "name": "Article 2-2",
+                "path": "#"
+        
+            }
+        
+    }
+    
+}

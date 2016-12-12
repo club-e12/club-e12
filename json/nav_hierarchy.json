@@ -1,17 +1,26 @@
 {
 
-          
-    "nav1": {
-        "name": "Article 1",
-        "path": "#",
-            "nav11": {
+    "nav1": { 
+        "name": "Article 1",   
+        "path": "#",          
+            "nav11": {        
                     "name": "Article 1-1",
                     "path": "#"
         
             },
             "nav12": {
                 "name": "Article 1-2",
-                "path": "#"
+                "path": "#",
+            
+                    "nav121": {
+                        "name": "Article 1-2-1",
+                        "path": "#"
+                    },
+                    "nav122": {
+                        "name": "Article 1-2-2",
+                        "path": "#"
+                    }
+                
         
             },
             "nav13": {
