@@ -55,18 +55,31 @@
                 // load linked nav sources into same window
                 uri_to_load = save_this.find('a').attr('href');
                 console.log(uri_to_load);
-                e.preventDefault();
+                e.preventDefault();                 // !!
                 if (uri_to_load != "#") {
                     $(".main").load(uri_to_load);
                 }
+                
+                // wayfindig
+                href = save_this.find('a').attr('href');
+                $("#wayfinding").append( uri_to_load );
                    
-            });
+            });  // end on click event
             
             // init: show top level of clamshell once on document ready event
             
-            $('nav ul').hide();
-    
+            $('nav ul').hide();  
             $('nav > ul > li ').parents().show(); // ! selector to remember
+            
+            // load content of first item in nav
+            
+            uri_to_load = $('nav li').find('a').attr('href');
+            e.preventDefault(); 
+            if (uri_to_load != "#") {
+                    $(".main").load(uri_to_load);
+                }
+            
+
   
         });
     </script>
@@ -81,8 +94,8 @@
     </header>
     
        
-    <div id="wayfindig">
-        
+    <div id="wayfinding">
+        wayfinding, you are here:
     </div>
     
     
@@ -90,7 +103,7 @@
         <?php include("inc/nav_dynamic.php"); ?>
     </nav>
     
-    <div class="main"> DIV </div>
+    <div class="main"></div>
     
     <footer>
         <p>Just a simple footer </p>

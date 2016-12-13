@@ -2,3 +2,8 @@ clamshell , JS - took ages
 generated nav dynamically from JSON on server: include returns nav list with populated values - took ages again
 
 clamshell load links with jquery load, contruct from DOM
+--
+
+categories align strategy
+wayfinding
+

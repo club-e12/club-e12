@@ -106,6 +106,14 @@ header p[title="club_e-12"] {
      font-size: 2em; 
 }
 
+div[id="wayfinding"] {
+    display: block;
+    background-color: blanchedalmond;
+    font-weight: bold;
+     font-size: 1.5em; 
+    text-align: center;
+}
+
 section {
     background-color: beige;
 }
