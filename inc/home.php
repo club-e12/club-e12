@@ -1,6 +1,5 @@
 <section>
-        
-        
+    
         <article>
         <h2> Lorem ipsum dolor </h2>
         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae quam arcu. Pellentesque condimentum, dui quis rutrum dignissim, ligula velit posuere ipsum, non faucibus erat ante ut urna. Sed aliquet malesuada nulla et blandit. Nulla vulputate lacus ornare nunc dapibus scelerisque. Aliquam iaculis malesuada metus, id lacinia erat hendrerit et. Vestibulum neque nunc, vehicula in pharetra non, feugiat eu mauris. Etiam ultricies hendrerit feugiat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis vitae purus enim, a pellentesque ante. Ut vitae lobortis ligula. Praesent sollicitudin sem nec lorem posuere vehicula. Quisque pulvinar accumsan leo non consectetur. Sed bibendum ante velit, sed ultrices eros. Cras aliquet, enim a ultricies porta, sapien velit faucibus neque, ac vehicula nisl mi in arcu. Nunc vitae justo nisl, a rutrum eros. Aliquam erat volutpat. Vivamus aliquet sem a justo lobortis volutpat. </p>

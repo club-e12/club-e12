@@ -16,11 +16,14 @@ nav ul {
   padding: 0;
 }
 nav ul li { 
+                                 
   margin: 0;
   border-top: 1px none #333;
 }
 nav ul li a {
   display: block;
+            float: left;
+            clear: both;
   background-color: #ccc;
   border-top: 1px none #333;
   border-right: 1px solid #333;
@@ -71,11 +74,10 @@ nav ul.collapse {  // ???
   display: none; 
 }
 
-// thomas
+/* thomas  NOT WORKING */
 
 nav li[nested="true"] > a {
-    letter-spacing: 12px;
-    background-color: blue;
+    color: blue;
 }
 
 nav li[iamhere="true"] > a { background-color: white; }
@@ -121,5 +123,21 @@ section {
 body article h2 {
     font-size: 1.5em; 
 }
+
+/* nav list with arrow symbol for nested items aliged to the right */
+nav div { 
+    display: block;
+   
+   }
+
+nav div.arrow { 
+    color: red;
+    float: right;
+     clear: right;
+    }
+
+
+
+
 
 

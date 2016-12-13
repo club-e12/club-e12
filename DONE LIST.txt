@@ -4,6 +4,16 @@ generated nav dynamically from JSON on server: include returns nav list with pop
 clamshell load links with jquery load, contruct from DOM
 --
 
+skeleton
 categories align strategy
 wayfinding
+title window names !!
+
+form -> room reserve,
+list -> books			nav recyclbar?
+sql -> books
+
+menues -> form
+
+
 

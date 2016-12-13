@@ -83,7 +83,7 @@ function my_func($para,$depth,$para_close_li_tag, $para_nav_id) {
                        $attr_nested="\"true\"";
                    }
                   
-                   print ( "<li id=\"". $nav_id ."\" nested=".$attr_nested . "><a  href= \"" .   $value .  "\">" .$name. "</a> <div class=\"arrow\"></div>   ");
+                   print ( "<li id=\"". $nav_id ."\" nested=".$attr_nested . "><a  href= \"" .   $value .  "\">" .$name. "</a> ");
                    
             
                 if (     $close_li_tag   )  {  
