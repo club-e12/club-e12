@@ -19,8 +19,8 @@
         
         $(document).ready(function () {
             $("nav li").click(function (e) {
-                
-                e.stopPropagation(); // !!! took ages to find this solution .. 
+                         
+                e.stopPropagation(); // !!! took ages to find this solution ..        
                 
                 // remember if current clicked on <li> was clicked (and hence expanded) before
                  old_iamhere = ( ($(this).attr("iamhere") == 'true') && ($(this).attr("expand") == 'true')  ); 
@@ -40,17 +40,27 @@
                 }
                 
                 save_this = $(this); // yess, this works - expanded value gets lost otherwise, jquery bug ?
-                
-    
-                
+                   
                 $('nav ul').hide();
                 $("[iamhere=true]").parents().show();       
+                  
+                  // down-arrow for  iamhere when it is a nested item
+                  $("[iamhere='true'][nested='true']").children('div.arrow').html("&#x25bc") ;
+                  // left-arrow for all not "iamhere"
+                  $("[iamhere!='true'][nested='true']").children('div.arrow').html("&#x25c4") ;
                 
+                 $("[iamhere=true]").parents("[nested='true'][iamhere='false']").find('div:first').html("&#x25bc"); // down arrow
                 
-                 if (!old_iamhere) {
+                 if (!old_iamhere) { // open close effect when clicked on again
                      $("[iamhere=true][expand=true]").children().show();
                      save_this.attr("expand", "true");  // re-init                                
+                 } else { // toggling arrow
+                     $("[nested='true']").children('div.arrow').html("&#x25c4") ;     // left arrow 
+                     // parents are also open , therefore left-arrow ... tricky traversing :-(
+                    $("[iamhere=true]").parents("[nested='true'][iamhere='false']").find('div:first').html("&#x25bc"); // down arrow 
                  }
+                
+                
                 
                 // load linked nav sources into same window
                 // child() won't wotk for nested <a> in <li>
@@ -75,29 +85,20 @@
             $('nav ul').hide();  
             $('nav > ul > li ').parents().show(); // ! selector to remember
             
-            // UTF-8 right pointing arrow for nested entries
-            /*
-            $('nav li[nested="true"] ').each(function () {
-                if  (($this).attr(iamhere) == "true" ) {
-                    $(this).find('div.arrow').text("_") ;
-                }
-                
-                
-            });
-            */
-             $("li[nested=true] ").attr("test", "xxx");
+            $("li[nested='true']").children('div.arrow').html("&#x25c4") ; // left arrow for nested elements
             
-            
-            
-            
-            /* load content of first item in nav
+            // load content of first item in nav
 
-            uri_to_load = $("nav ul li").find('a').attr('href');
-           
-            $("#main").load(uri_to_load);  // ??
-            */
+            uri_to_load = $("nav ul li").first().find('a').attr('href');
+
+            // alert( uri_to_load.text() );
+            $(".main").load(uri_to_load)  ; // ??
+            
   
-        });
+        }); // end of inner function document ready
+        
+
+        
             
     </script>
 </head>
@@ -121,7 +122,11 @@
         <?php include("inc/nav_dynamic.php"); ?>
     </nav>
     
-    <div class="main"></div>
+    <div class="main">
+                <!-- content gets injected via js load -->
+    </div>
+    
+
     
     <footer>
         <p>Just a simple footer </p>

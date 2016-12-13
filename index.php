@@ -45,17 +45,21 @@
                 $("[iamhere=true]").parents().show();       
                   
                   // down-arrow for  iamhere when it is a nested item
-                  $("[iamhere='true'][nested='true']").children('div.arrow').html("&#x25bc") ;
+                  $("[iamhere='true'][nested='true']").children('div.arrow').html("&#x25bc").attr("highlight_arrow","true"); 
                   // left-arrow for all not "iamhere"
-                  $("[iamhere!='true'][nested='true']").children('div.arrow').html("&#x25c4") ;
+                  $("[iamhere!='true'][nested='true']").children('div.arrow').html("&#x25c4").attr("highlight_arrow","false");  ;
                 
-                 $("[iamhere=true]").parents("[nested='true'][iamhere='false']").find('div:first').html("&#x25bc"); // down arrow
+                // down arrow for parents of iamhere
+                 $("[iamhere=true]").parents("[nested='true'][iamhere='false']").find('div:first').html("&#x25bc").attr("highlight_arrow","true");
                 
                  if (!old_iamhere) { // open close effect when clicked on again
                      $("[iamhere=true][expand=true]").children().show();
                      save_this.attr("expand", "true");  // re-init                                
                  } else { // toggling arrow
-                     $("[nested='true']").children('div.arrow').html("&#x25c4") ;     // left arrow 
+                     // left arrow 
+                     $("[nested='true']").children('div.arrow').html("&#x25c4") ; 
+                     // iamhere gets closed and changes color
+                     $("[nested='true'][iamhere=true]").find('div').attr("highlight_arrow","false"); 
                      // parents are also open , therefore left-arrow ... tricky traversing :-(
                     $("[iamhere=true]").parents("[nested='true'][iamhere='false']").find('div:first').html("&#x25bc"); // down arrow 
                  }
@@ -65,15 +69,28 @@
                 // load linked nav sources into same window
                 // child() won't wotk for nested <a> in <li>
                 uri_to_load = save_this.find('a').attr('href');
+                new_title = save_this.find('a:first').text();
+                document.title = new_title + ":" + " Club-E12";
+              
            
                 e.preventDefault();                 // !!
                 if (uri_to_load != "#") {
                     $(".main").load(uri_to_load);
                 }
                 
-                // wayfindig
-               
-                // $("#wayfinding").append( uri_to_load );
+                // wayfinding, current path
+                path="";
+                current = $("[iamhere=true]").find('a:first').text();  // current element
+                $("[iamhere=true]").parents("[nested='true'][iamhere='false']").find('a:first').each (function (value) {
+                    path =  path+$(this).text()+" -> "  ;
+                }); 
+                path=path+current;
+    
+                
+                $('span[id="wayfinding"]').text("You are here: "+path);
+         
+                
+                           
                    
             });  // end on click event inner function
             
@@ -93,6 +110,7 @@
 
             // alert( uri_to_load.text() );
             $(".main").load(uri_to_load)  ; // ??
+            document.title = "XXXXX";
             
   
         }); // end of inner function document ready
@@ -104,34 +122,54 @@
 </head>
 
 <body>
-    
+    <div id="wrapper">
 
     
-    <header>
-        <p title="club_e-12">Club E-12</p>
-    </header>
     
-       
-    <div id="wayfinding">
-        wayfinding, you are here: 
-     
-    </div>
-    
-    
-    <nav>
-        <?php include("inc/nav_dynamic.php"); ?>
-    </nav>
-    
-    <div class="main">
-                <!-- content gets injected via js load -->
-    </div>
-    
-    <footer>
-        <p>Just a simple footer </p>
-    </footer>
-    
+        <header>    
+            <div id="header-content">
+                <h1 title="club_e-12">Club E-12 </h1>
+                <h1 title="club_e-12">Club E-12 </h1>
+           
+                    <span id="wayfinding"> 
+                    </span>
 
+            </div>  
+        </header>
+   
+
+        
     
+    <div id="content">
+        
+        
+  
+
+        <div id="sidebar">
+            <nav>
+                <?php include("inc/nav_dynamic.php"); ?>
+            </nav>
+        </div>
+
+        <div id="main" class="main">
+                    <!-- content gets injected via js load -->
+        </div>
+
+
+
+         
+    
+    </div> <!-- end content -->
+
+    <div class="push"></div>
+
+    </div> <!-- wrapper -->
+    
+    <div id="footer">
+        <footer id="footer-content">
+            <p>Just a simple footer </p>
+        </footer>
+    </div>
 </body>
 
 </html>

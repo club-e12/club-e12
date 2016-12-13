@@ -4,6 +4,11 @@ generated nav dynamically from JSON on server: include returns nav list with pop
 clamshell load links with jquery load, contruct from DOM
 --
 
+?? css reset ??
+REPORT:			arbeit	nav	buttons !!! 
+title bar with ending club 12 for every tab
+	
+
 skeleton
 categories align strategy
 wayfinding

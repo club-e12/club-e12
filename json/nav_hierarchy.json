@@ -7,7 +7,7 @@
     
     "nav1": { 
         "name": "About Us",   
-        "path": "#",          
+        "path": "inc/about_us.php",          
             "nav11": {        
                     "name": "Mission",
                     "path": "#"
@@ -56,7 +56,7 @@
         "path": "#",
         
             "nav30": {
-                "name": "Reserve Club Room",
+                "name": "Club Room",
                 "path": "#"
         
             },
