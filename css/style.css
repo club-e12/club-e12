@@ -1,13 +1,13 @@
 nav { float: left; margin-right: 1em;}
 
 nav {
+  background-color: #ccc;                                    /* thomas */
   font-family: Arial, Verdana, Helvetica, sans-serif;
   font-weight: bold;
   font-size: 1.2em;
   width: 10em;
   border-right: 1px solid #333;
   margin-bottom: 1em;
-  background-color: #ddd;
   color: #900;
 }
 nav ul { 
@@ -19,15 +19,20 @@ nav ul li {
                                  
   margin: 0;
   border-top: 1px none #333;
+    
 }
 nav ul li a {
   display: block;
             float: left;
             clear: both;
+        
+             border-color: green;
+    
   background-color: #ccc;
+        
   border-top: 1px none #333;
-  border-right: 1px solid #333;
-  border-bottom: thin dotted #333;
+  border-right: 1px none #333;
+  border-bottom: thin none #333; /* thomas: from dotted to none */
   border-left: 5px solid #333;
   text-decoration: none;
   padding: 2px 2px 2px 0.5em;
@@ -74,11 +79,11 @@ nav ul.collapse {  // ???
   display: none; 
 }
 
-/* thomas  NOT WORKING */
+/* thomas  tes, ok
 
 nav li[nested="true"] > a {
     color: blue;
-}
+} */
 
 nav li[iamhere="true"] > a { background-color: white; }
 
@@ -125,17 +130,17 @@ body article h2 {
 }
 
 /* nav list with arrow symbol for nested items aliged to the right */
-nav div { 
-    display: block;
-   
-   }
+
 
 nav div.arrow { 
+        display: block;
+    background-color: #ccc;
     color: red;
+ 
+    
     float: right;
      clear: right;
     }
-
 
 
 
