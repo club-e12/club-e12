@@ -1,15 +1,23 @@
-<!DOCTYPE html>
+<?php
+    define( 'SCRIPT_ROOT', 'http://localhost/club-e12' );
+?>
 
+<!DOCTYPE html>
 <html lang="en">
-    
-    
 
 <head>
-    <title>Club E-12</title>
+    <title>Club E-12</title>  <!- gets dyynamicall changed by loaded main content -->
     
     <meta charset="utf-8">
     
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+    <!-- this enforces to reload the css with a dummy version not existent -->
+    <?php
+    $v=rand(1, 10000);
+    echo '<link rel="stylesheet" type="text/css" href="'.SCRIPT_ROOT.'/css/svg_logo.css?v=' .$v  . '">';
+    ?>
+    
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript">
     </script>
@@ -39,7 +47,7 @@
                     $(this).attr("expand", "false");   
                 }
                 
-                save_this = $(this); // yess, this works - expanded value gets lost otherwise, jquery bug ?
+                save_this = $(this); // yess, this works - expanded-value gets lost otherwise ! jquery bug?
                    
                 $('nav ul').hide();
                 $("[iamhere=true]").parents().show();       
@@ -65,9 +73,9 @@
                  }
                 
                 
-                
                 // load linked nav sources into same window
-                // child() won't wotk for nested <a> in <li>
+                // rem: child() won't work for nested <a> in <li>
+                
                 uri_to_load = save_this.find('a').attr('href');
                 new_title = save_this.find('a:first').text();
                 document.title = new_title + ":" + " Club-E12";
@@ -78,21 +86,22 @@
                     $(".main").load(uri_to_load);
                 }
                 
-                // wayfinding, current path
-                path="";
+                /* WAFINDIG , path construction  */
+                /* use CCS to style these different span id's for introtest, sperator symbol and path !! */
+                
+                sperator ="<span id='sep_symb'> &#x2192; </span>"; 
+                path = sperator;
                 current = $("[iamhere=true]").find('a:first').text();  // current element
                 $("[iamhere=true]").parents("[nested='true'][iamhere='false']").find('a:first').each (function (value) {
-                    path =  path+$(this).text()+" -> "  ;
+                    path =  path+$(this).text()+sperator;
                 }); 
                 path=path+current;
     
+                $('span[id="wayfinding"]').html( "<span id='intro'> You are here: </span>"
+                    + "<span id='path'>" +   path + "</span>" );
+                                                
                 
-                $('span[id="wayfinding"]').text("You are here: "+path);
-         
-                
-                           
-                   
-            });  // end on click event inner function
+            });  // end on-click event inner function
             
             
             // things to run only once after initial DOM:
@@ -107,69 +116,85 @@
             // load content of first item in nav
 
             uri_to_load = $("nav ul li").first().find('a').attr('href');
+            first_title = $("nav ul li").first().find('a').text()+ ":" + " Club-E12";
 
             // alert( uri_to_load.text() );
             $(".main").load(uri_to_load)  ; // ??
-            document.title = "XXXXX";
+            document.title = first_title;
             
-  
         }); // end of inner function document ready
-        
-
-        
-            
+  
     </script>
 </head>
 
+    
 <body>
     <div id="wrapper">
 
-    
-    
         <header>    
             <div id="header-content">
-                <h1 title="club_e-12">Club E-12 </h1>
-                <h1 title="club_e-12">Club E-12 </h1>
-           
-                    <span id="wayfinding"> 
-                    </span>
+                
+             
+                <div class="svg_div_left">
+                    <?php
+                    $file_svg = file_get_contents(SCRIPT_ROOT."/images/club-e12.svg");
+                    echo $file_svg;
+                    ?>
+                </div>
+                
+                
+                <div class="svg_div_right">
+                    <?php
+                    $file_svg = file_get_contents(SCRIPT_ROOT."/images/club-e12.svg");
+                    echo $file_svg;
+                    ?>
+                </div>
+                
+                <div class="header_text">
+                    thomas
+                </div>
+                
+                <div class="header_text">
+                    thomas_2
+                </div>
+                
+                <div class="header_text">
+                    <span id="wayfinding"></span> <!-- display current  path, injected via js -->
+                </div>
+                
+                
 
             </div>  
         </header>
    
-
+    <div id="content">  <!-- contains nav sidebar and main injected cotent -->
         
-    
-    <div id="content">
-        
-        
-  
 
         <div id="sidebar">
+            
             <nav>
                 <?php include("inc/nav_dynamic.php"); ?>
             </nav>
         </div>
+        
 
-        <div id="main" class="main">
-                    <!-- content gets injected via js load -->
+        <div id="main" class="main"> 
+            <!-- content gets injected via js load -->
         </div>
-
-
-
-         
-    
+        
     </div> <!-- end content -->
 
+        
     <div class="push"></div>
 
-    </div> <!-- wrapper -->
+    </div> <!-- end of wrapper -->
     
     <div id="footer">
         <footer id="footer-content">
             <p>Just a simple footer </p>
         </footer>
     </div>
+    
 </body>
 
 </html>

@@ -1,17 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
 
-
-<html lang="en">
-        <head>
-            <link rel="stylesheet" href="sticky_footer.css" />
-            <link rel="stylesheet" href="svg.css" />
-        </head>
-        <body>
-            <div class="YOUR-SVG-CONTAINER">
-                
-                
-             <div>thomas</div>
-                
-              <svg
+<svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -19,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="300px"
-   height="100px"
- 
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 744.09448819 1052.3622047"
    id="svg3378"
    version="1.1"
    inkscape:version="0.91 r13725"
@@ -109,25 +99,3 @@
     </g>
   </g>
 </svg>
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-              
-             
-            </div>
-            
-                         <div>thomas</div>
-       
-        </body>
-    </html>

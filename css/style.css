@@ -5,8 +5,8 @@ nav {
   font-family: Arial, Verdana, Helvetica, sans-serif;
   font-weight: 600;
   font-size: 1em;
-  width: 10em;
-  border-right: 1px none #333; /* thomas from solid */
+  width: 12em;                                /* do em for other styles too !! */
+  border-right: 1px none #333;                   /* thomas from solid */
   margin-bottom: 1em;
   color: #900;
 }
@@ -18,7 +18,7 @@ nav ul {
 nav ul li { 
                                  
   margin: 0;
-  border-top: 1px none #333;
+  border-top: 1px none #333;                /* check ! */
     
 }
 nav ul li a {
@@ -57,7 +57,7 @@ nav a:hover {
 
 nav a:active {  
   color: yellow;  /* thomas was white #fff */
-  background-color: #900;
+  background-color: #ccc; /* thomas was #900 */
     /*
   border-top: 1px inset #333;
   border-right: 1px inset #333;
@@ -91,12 +91,12 @@ nav li[nested="true"] > a {
 } */
 
 nav li[iamhere="true"] > a { 
-    color: white;
+    color: #fff;
     background-color: #ccc;
     font-weight: bolder;}
 
 nav li[iamhere="true"] > a:hover {
-  color: #900;
+  color: #900; 
   background-color: #fff;
   /* border-top: 1px none #333;
   border-right: 1px solid #333;
@@ -105,41 +105,47 @@ nav li[iamhere="true"] > a:hover {
     */} 
 
 // --
-header {
-    display: block;
-}
+
 
 header {
+    display: block;  
+}
+header {
     background-color: rosybrown;
+   
 }
 
 footer {
-    background-color: aquamarine;
+    background-color: lightcyan;
 }
 
 header h1[title="club_e-12"] {
+    color: white;
     display:inline-flex;
     float: left;
      font-weight: bold;
      font-size: 24px;  /* 2em */
 }
 
-span[id="wayfinding"] {
-    clear: left;
-    display: inline-flex;
-    float: left;
-    background-color: blanchedalmond;
-    font-weight: bold;
-     font-size: 1em; 
-    text-align: center;
-}
+/* wayfinding */
+
+
+
+
+  
 
 body {
     background-color: beige;
 }
 
-body article h2 {
-    font-size: 1.5em; 
+body article h1 {
+    font-size: 2.5em;
+  
+}
+
+body section article {
+    text-align: justify;
+    padding-right:  24px; /* improve */
 }
 
 /* nav list with arrow symbol for nested items aliged to the right */
@@ -155,11 +161,18 @@ nav div.arrow {
      clear: right;
     }
 nav div.arrow[highlight_arrow="true"] {
-    color: white;
+    color: #fff;
 }
 
+/* new header styles, thomas */
 
-
+.header_text {
+    border: solid 1px red;
+    color: red;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 /* layout , thomas */
 

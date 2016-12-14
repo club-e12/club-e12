@@ -4,10 +4,32 @@ generated nav dynamically from JSON on server: include returns nav list with pop
 clamshell load links with jquery load, contruct from DOM
 --
 
+quellen: 
+css for svg drawing effect -> https://codepen.io/MyXoToD/post/howto-self-drawing-svg-animation
+		https://css-tricks.com/animating-svg-css/
+
+
+
+
+(1) clean up, test server + 404
+(2)
+(3)
+(4)
+
+document: h1 only for main page (seo)
+
+Header, nav , footer -> includes !!
+my lorem ipsum include
+favicon
+SERVER ->   404 !!!
+BEGRÜNDEN report skeleten why not textbook
+BROWSER matrix -> test -> report
+
 ?? css reset ??
 REPORT:			arbeit	nav	buttons !!! 
 title bar with ending club 12 for every tab
-	
+
+footer - html bild
 
 skeleton
 categories align strategy

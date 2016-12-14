@@ -1,0 +1,54 @@
+svg {
+          position: relative;
+       
+}
+
+svg path {
+  fill-opacity: 0;
+  stroke: #000;
+  stroke-width: 1;
+  stroke-dasharray: 870;
+  stroke-dashoffset: 870;
+  animation: draw 10s infinite linear;
+}
+
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.svg_div_center {
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 1px red;
+    
+}
+
+.svg_div_left {
+    float: left;
+     border: solid 1px red;
+}
+
+.svg_div_right {
+    float: right; 
+     border: solid 1px red;
+}
+
+p[id="p1"] {
+    color: red;
+
+}
+
+#cafe_div {
+     background-color: burlywood;
+      clear: both;
+      float: center;
+}
+
+
+h3 {
+    color: blue;
+    
+}

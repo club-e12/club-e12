@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-
 <html lang="en">
-    
-    
 
 <head>
-    <title>Club E-12</title>
+    <title>Club E-12</title>  <!- gets dyynamicall changed by loaded main content -->
     
     <meta charset="utf-8">
     
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript">
     </script>
@@ -39,43 +37,61 @@
                     $(this).attr("expand", "false");   
                 }
                 
-                save_this = $(this); // yess, this works - expanded value gets lost otherwise, jquery bug ?
+                save_this = $(this); // yess, this works - expanded-value gets lost otherwise ! jquery bug?
                    
                 $('nav ul').hide();
                 $("[iamhere=true]").parents().show();       
                   
                   // down-arrow for  iamhere when it is a nested item
-                  $("[iamhere='true'][nested='true']").children('div.arrow').html("&#x25bc") ;
+                  $("[iamhere='true'][nested='true']").children('div.arrow').html("&#x25bc").attr("highlight_arrow","true"); 
                   // left-arrow for all not "iamhere"
-                  $("[iamhere!='true'][nested='true']").children('div.arrow').html("&#x25c4") ;
+                  $("[iamhere!='true'][nested='true']").children('div.arrow').html("&#x25c4").attr("highlight_arrow","false");  ;
                 
-                 $("[iamhere=true]").parents("[nested='true'][iamhere='false']").find('div:first').html("&#x25bc"); // down arrow
+                // down arrow for parents of iamhere
+                 $("[iamhere=true]").parents("[nested='true'][iamhere='false']").find('div:first').html("&#x25bc").attr("highlight_arrow","true");
                 
                  if (!old_iamhere) { // open close effect when clicked on again
                      $("[iamhere=true][expand=true]").children().show();
                      save_this.attr("expand", "true");  // re-init                                
                  } else { // toggling arrow
-                     $("[nested='true']").children('div.arrow').html("&#x25c4") ;     // left arrow 
+                     // left arrow 
+                     $("[nested='true']").children('div.arrow').html("&#x25c4") ; 
+                     // iamhere gets closed and changes color
+                     $("[nested='true'][iamhere=true]").find('div').attr("highlight_arrow","false"); 
                      // parents are also open , therefore left-arrow ... tricky traversing :-(
                     $("[iamhere=true]").parents("[nested='true'][iamhere='false']").find('div:first').html("&#x25bc"); // down arrow 
                  }
                 
                 
-                
                 // load linked nav sources into same window
-                // child() won't wotk for nested <a> in <li>
+                // rem: child() won't work for nested <a> in <li>
+                
                 uri_to_load = save_this.find('a').attr('href');
+                new_title = save_this.find('a:first').text();
+                document.title = new_title + ":" + " Club-E12";
+              
            
                 e.preventDefault();                 // !!
                 if (uri_to_load != "#") {
                     $(".main").load(uri_to_load);
                 }
                 
-                // wayfindig
-               
-                // $("#wayfinding").append( uri_to_load );
-                   
-            });  // end on click event inner function
+                /* WAFINDIG , path construction  */
+                /* use CCS to style these different span id's for introtest, sperator symbol and path !! */
+                
+                sperator ="<span id='sep_symb'> &#x2192; </span>"; 
+                path = sperator;
+                current = $("[iamhere=true]").find('a:first').text();  // current element
+                $("[iamhere=true]").parents("[nested='true'][iamhere='false']").find('a:first').each (function (value) {
+                    path =  path+$(this).text()+sperator;
+                }); 
+                path=path+current;
+    
+                $('span[id="wayfinding"]').html( "<span id='intro'> You are here: </span>"
+                    + "<span id='path'>" +   path + "</span>" );
+                                                
+                
+            });  // end on-click event inner function
             
             
             // things to run only once after initial DOM:
@@ -90,49 +106,57 @@
             // load content of first item in nav
 
             uri_to_load = $("nav ul li").first().find('a').attr('href');
+            first_title = $("nav ul li").first().find('a').text()+ ":" + " Club-E12";
 
             // alert( uri_to_load.text() );
             $(".main").load(uri_to_load)  ; // ??
+            document.title = first_title;
             
-  
         }); // end of inner function document ready
-        
-
-        
-            
+  
     </script>
 </head>
 
+    
 <body>
-    
+    <div id="wrapper">
 
+        <header>    
+            <div id="header-content">
+                
+                <h2 title="club_e-12 ">Club E-12 </h2>
+                
+                <span id="wayfinding"></span> <!-- display current  path, injected -->
+
+            </div>  
+        </header>
+   
+    <div id="content">  <!-- contains nav sidebar and main injected cotent -->
+        
+
+        <div id="sidebar">
+            <nav>
+                <?php include("inc/nav_dynamic.php"); ?>
+            </nav>
+        </div>
+        
+
+        <div id="main" class="main"> 
+            <!-- content gets injected via js load -->
+        </div>
+        
+    </div> <!-- end content -->
+
+        
+    <div class="push"></div>
+
+    </div> <!-- end of wrapper -->
     
-    <header>
-        <p title="club_e-12">Club E-12</p>
-    </header>
-    
-       
-    <div id="wayfinding">
-        wayfinding, you are here: 
-     
+    <div id="footer">
+        <footer id="footer-content">
+            <p>Just a simple footer </p>
+        </footer>
     </div>
-    
-    
-    <nav>
-        <?php include("inc/nav_dynamic.php"); ?>
-    </nav>
-    
-    <div class="main">
-                <!-- content gets injected via js load -->
-    </div>
-    
-
-    
-    <footer>
-        <p>Just a simple footer </p>
-    </footer>
-    
-
     
 </body>
 

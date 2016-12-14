@@ -13,9 +13,10 @@ $last_depth =0;
 $just_opened = true;
 
     
-function my_func($para,$depth,$para_close_li_tag) {  
+function my_func($para,$depth,$para_close_li_tag, $para_nav_id) {  
 
     $close_li_tag = $para_close_li_tag;
+    $nav_id = $para_nav_id; 
     
     $prev_node_depth = $depth;
     $depth=$depth+1;
@@ -34,6 +35,7 @@ function my_func($para,$depth,$para_close_li_tag) {
            
            // print </li> only for non nested objects in next recursive call
            if ( $new_node)  {
+               $nav_id = $key;
                if ( sizeof($value)==2 ) {
                    $close_li_tag=true;
                } else {
@@ -57,7 +59,7 @@ function my_func($para,$depth,$para_close_li_tag) {
             if ( $new_node ) {
                //   print ("<br/>new node: last " . $last_depth . "  depth: ". $depth ." prev_depth: ".$prev_node_depth  ."<br/>");
               //  print ("ENTER recursion <br/>");
-                $prev_node_depth = my_func($value,$depth,$close_li_tag);
+                $prev_node_depth = my_func($value,$depth,$close_li_tag,$nav_id);
               //  print ("BACK from recursion <br/>");
             }   
            
@@ -76,10 +78,12 @@ function my_func($para,$depth,$para_close_li_tag) {
                 // print ( "<li>" . $value . $name. " </li> ");
                    
                    $attr_nested="\"false\"";
+                   
                    if (!$close_li_tag) {
                        $attr_nested="\"true\"";
                    }
-                   print ( "<li nested=".$attr_nested . "><a href= \"" .   $value .  "\">" .$name. "</a> ");
+                  
+                   print ( "<li id=\"". $nav_id ."\" nested=".$attr_nested . "><a  href= \"" .   $value .  "\">" .$name. "</a> <div class=\"arrow\"></div>   ");
                    
             
                 if (     $close_li_tag   )  {  
@@ -110,7 +114,11 @@ function my_func($para,$depth,$para_close_li_tag) {
         
        if ($prev_node_depth-1 == $depth) { 
            
-           print ("</ul></li> ") ; 
+           print ("</ul>") ; 
+           
+           if ($depth!=0) {
+               print ("</li>");
+           }
            $group_closed = true ; }
     
 
@@ -120,7 +128,7 @@ function my_func($para,$depth,$para_close_li_tag) {
 }   
 
 
-$x=my_func($data,-1,false);
+$x=my_func($data,-1,false,"");
 
 
 
