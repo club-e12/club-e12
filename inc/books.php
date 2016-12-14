@@ -31,24 +31,24 @@
         }
 
 
-        li.course { padding-top: 0.7em; padding-left: 0.5em; }
+        li.book { padding-top: 0.7em; padding-left: 0.5em; }
 
-        .course .number { font-style: small;}
-        .course .title { font-weight: bold; }
-        .course .faculty { font-style: italic; }
-        .course .meeting {font-size: smaller; }
+        .book .isbn_13 { font-style: small;}
+        .book .available { font-weight: bold; }
+        .book .location { font-style: italic; }
+        .book .received {font-size: smaller; }
 </style>
 
 <script>
-    var courses_data_url = "https://cdn.rawgit.com/tf-csci-e-12/92d5331ff29cb1e9d83430c383a4b852/raw/8807c34a8ef3f858b0e7b47da7af14ab48786043/courses.json";
+    var books_data_url = "https://rawgit.com/club-e12/club-e12/master/json/book_list.json";
 
 $(document).ready(function(){
- $.getJSON(courses_data_url,
+ $.getJSON(books_data_url,
   function (data) {
-    var mysource = $('#courselisttemplate').html();
+    var mysource = $('#booklisttemplate').html();
     var mytemplate = Handlebars.compile(mysource);
     var myresult = mytemplate(data)
-    $('#courselist').html(myresult);
+    $('#booklist').html(myresult);
   });
 });
 
@@ -57,7 +57,7 @@ $(document).ready(function(){
 <body>
     
   <?php
-   print ("thomas3");
+
 
     include("my_lib/Book.php");
     $book = new Book();
@@ -79,28 +79,26 @@ $(document).ready(function(){
 ?>
     
     
-    <h2>Courses</h2>
+    <h2>Books</h2>
 
-<div id="courselist">Course list goes here...</div>
-<div id="courselisttemplate" class="handlebars">
+<div id="booklist">Book list goes here...</div>
+<div id="booklisttemplate" class="handlebars">
     
-    <p>{{courses.length}} courses were found:</p>
+    <p>{{books.length}} books were found:</p>
     <ol>
-        {{#each courses as |course|}}
+        {{#each books as |book|}}
       
-        <li class="course">
-            <span class="number">{{course_group}} {{num_int}}{{num_char}}</span>
+        <li class="book">
+            <span class="isbn_13">{{isbn_13}}</span>
             <br/>
-            <span class="title">{{title}}</span>
-        
-            {{#if faculty_text }}
+            <span class="available">{{available}}</span>
               <br/>
-              <span class="faculty">{{faculty_text}}</span>           
-            {{/if}}
-            {{#if meeting_text }}
+            
+            <span class="location">{{location}}</span>           
+
               <br/>
-              <span class="meeting">{{meeting_text}}</span>
-            {{/if}}
+              <span class="received">{{received}}</span>
+     
             
         </li>
       
