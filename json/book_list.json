@@ -1,0 +1,16 @@
+{
+    "books": [
+        {
+            "isbn_13": "0321965515",
+            "available": "true",
+            "location": "Shelf 1, row 2",
+            "received": "2016-08-20"
+        },
+        {
+            "isbn_13": "1933820977",
+            "available": "true",
+            "location": "Shelf 1, row 2",
+            "received": "2016-08-29"
+        }
+    ]
+  }

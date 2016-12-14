@@ -1,5 +1,4 @@
 <?php
-    define( 'SCRIPT_ROOT', 'http://localhost/club-e12' );
 ?>
 
 <!DOCTYPE html>
@@ -56,6 +55,29 @@ $(document).ready(function(){
 </script>
     
 <body>
+    
+  <?php
+   print ("thomas3");
+
+    include("my_lib/Book.php");
+    $book = new Book();
+    $book->isbn_13 = "9780321965516";
+    
+    print ( $book->isbn_13) ;
+   
+    
+    include("my_lib/MyOwnFetchLib.php");
+    $fetch = new MyOwnFetchLib();
+    
+    $fetch->getBookAndAuthors($book);
+    print ($book->published);
+    
+        
+             
+  
+   
+?>
+    
     
     <h2>Courses</h2>
 
