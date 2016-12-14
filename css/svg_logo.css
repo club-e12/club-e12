@@ -1,4 +1,7 @@
 svg {
+        padding: 0;
+        margin: 0;
+    
           position: relative;
        
 }
@@ -19,21 +22,22 @@ svg path {
   }
 }
 
+
 .svg_div_center {
+                    
     margin-left: auto;
     margin-right: auto;
-    border: solid 1px red;
+   
     
 }
 
 .svg_div_left {
     float: left;
-     border: solid 1px red;
 }
 
 .svg_div_right {
     float: right; 
-     border: solid 1px red;
+    
 }
 
 p[id="p1"] {

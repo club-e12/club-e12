@@ -8,14 +8,26 @@ quellen:
 css for svg drawing effect -> https://codepen.io/MyXoToD/post/howto-self-drawing-svg-animation
 		https://css-tricks.com/animating-svg-css/
 
+echo: http://cscie12.dce.harvard.edu/echo
 
-
+gzip compression svg
 
 (1) clean up, test server + 404
-(2)
-(3)
-(4)
+(2) clean up svg files html  - see error404 full page
+(3) nuvalidator !
+(4) use CDN !
 
+docu: colors
+docu: error 404
+doce: much work -> not from scatch but davids clamshell skeleton,
+		-> recursion (could be done in js - but browser support).
+
+docu: normalize.css
+docu: updated to last jquery version i davids clamshell skeleton
+docu:  put much work into float layout of header, many detaisl: 
+	
+	left margin of nav also below nav div (extenbds till footer)
+	also this margin in header for consistent layout
 document: h1 only for main page (seo)
 
 Header, nav , footer -> includes !!

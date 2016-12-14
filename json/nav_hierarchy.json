@@ -47,7 +47,7 @@
 
     "nav2": {
         "name": "Events",
-        "path": "inc/sorry_404.php"     
+        "path": "inc/error_pages/sorry_404.php"     
         },
 
     
@@ -63,7 +63,7 @@
         
             "nav31": {
                     "name": "Book Exchange",
-                    "path": "#"
+                    "path": "inc/books.php"
         
             },
             "nav32": {
