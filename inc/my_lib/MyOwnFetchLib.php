@@ -32,7 +32,8 @@ class MyOwnFetchLib {
                 $book->published = $jsondata_2["items"][0]["volumeInfo"]["publishedDate"];
                 $book->page_count = intval  ( $jsondata_2["items"][0]["volumeInfo"]["pageCount"] );
                 $book->purchase_link = $jsondata_2["items"][0]["volumeInfo"]["infoLink"];
-
+                
+                $book->description = $jsondata_2["items"][0]["volumeInfo"]["description"];
 
                 $cover = 'https://books.google.com/books/content?id=' .$id . '&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api';
                 $book->cover = $cover;

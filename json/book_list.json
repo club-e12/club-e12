@@ -7,9 +7,22 @@
             "received": "2016-08-20"
         },
         {
-            "isbn_13": "1491918055",
+            "isbn_13": "1118531647",
+            "available": "true",
+            "location": "Shelf 2, row 2",
+            "received": "2016-08-29"
+        }
+        ,
+        {
+            "isbn_13": "1449319270",
             "available": "true",
             "location": "Shelf 1, row 2",
+            "received": "2016-08-29"
+        },
+        {
+            "isbn_13": "1933820977",
+            "available": "true",
+            "location": "Shelf 1, row 4",
             "received": "2016-08-29"
         }
     ]

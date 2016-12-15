@@ -91,11 +91,11 @@
                 /* WAFINDIG , path construction  */
                 /* use CCS to style these different span id's for introtest, sperator symbol and path !! */
                 
-                sperator ="<span id='sep_symb'> &#x2192; </span>"; 
-                path = sperator;
+                seperator ="<span id='sep_symb'> &#x2192; </span>"; 
+                path = seperator;
                 current = $("[iamhere=true]").find('a:first').text();  // current element
                 $("[iamhere=true]").parents("[nested='true'][iamhere='false']").find('a:first').each (function (value) {
-                    path =  path+$(this).text()+sperator;
+                    path =  path+$(this).text()+seperator;
                 }); 
                 path=path+current;
     

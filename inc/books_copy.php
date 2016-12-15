@@ -43,28 +43,19 @@ $(document).ready(function(){
     var myresult = mytemplate(data)
     $('#booklist').html(myresult);
      
-    
      
-   $("div[data-isbn_13]").each(function(){
-       var isbn_temp = $(this).data('isbn_13');
-      
-       $(this).append(    $('div[data-nr="' + isbn_temp+ '"]') );
-       
-      
-      
-   });
+         $(".details").each( function () {
+                alert ( $(this).html()  );    
+            });
      
+  });
     
- });
 
-     
+    
+
+    
+
 });
-    
-
-    
-
-    
-
 
 </script>
     
@@ -101,16 +92,8 @@ $(document).ready(function(){
         $fetch = new MyOwnFetchLib();
         $fetch->getBookAndAuthors($book); // extracted multiple authors from single string in json
         
-        print ("<div data-isbn_13=\"" . $item_isbn ."\" class=\"book\" visible=\"false\"> ");
-    
-        print(" <img class='cover'    src=\"" . $book->cover . "\">" );
-        print("<div>");
-        print ("Title: " . $book->title); 
-        print ("Title: " . $book->description); 
-   
-        print("</div>");
-        print("</div>");
-       
+        print ("<div id=\"box_" . $item_isbn ."\" class=\"book\" visible=\"false\"> </div>");
+        
         
       //  print ("test : " . $book->description ." ". $book->google_preview);
     
@@ -134,23 +117,23 @@ $(document).ready(function(){
     
 <div id="booklist">Book list goes here...</div>
 <div id="booklisttemplate" class="handlebars">
-
+    
+    <p>{{books.length}} books were found:</p>
    
         {{#each books as |book|}}
         
 
       
-        <div data-nr={{isbn_13}} class="details">
-            <span class="isbn_13">isbn: {{isbn_13}}</span>
+        <div id={{isbn_13}} class="details">{{isbn_13}}
+            <span class="isbn_13">{{isbn_13}}</span>
             <br/>
-            <span class="available">Available:{{available}}</span>
+            <span class="available">{{available}}</span>
               <br/>
             
-            <span class="location">Location: {{location}}</span>           
+            <span class="location">{{location}}</span>           
 
               <br/>
-              <span class="received">Received: {{received}}</span>
-            
+              <span class="received">{{received}}</span>
    
         </div>
          
